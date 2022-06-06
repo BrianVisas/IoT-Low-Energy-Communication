@@ -1,0 +1,30 @@
+{C:/Users/Brian Visas/Downloads/VHDL_Code_v1.1/VHDL_Code/Range_Sensor.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Brian Visas/Downloads/VHDL_Code_v1.1/VHDL_Code/Range_Sensor.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2021.1 Compiler 2021.02 Feb  3 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity Range_Sensor
+-- Compiling architecture Behavioral of Range_Sensor
+
+} {} {}} {C:/Users/Brian Visas/Downloads/VHDL_Code_v1.1/VHDL_Code/Trigger_generator.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Brian Visas/Downloads/VHDL_Code_v1.1/VHDL_Code/Trigger_generator.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2021.1 Compiler 2021.02 Feb  3 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity Trigger_generator
+-- Compiling architecture Behavioral of Trigger_generator
+
+} {} {}} {C:/Users/Brian Visas/Downloads/VHDL_Code_v1.1/VHDL_Code/adc_parallel_interface.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/Brian Visas/Downloads/VHDL_Code_v1.1/VHDL_Code/adc_parallel_interface.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2021.1 Compiler 2021.02 Feb  3 2021
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity adc_interface
+-- Compiling architecture beh of adc_interface
+
+} {} {}}
