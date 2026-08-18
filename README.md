@@ -46,7 +46,6 @@ Analog sensor -> Arduino -> ESP8266 ---- HTTP ----> Cloud channel ---- HTTP ----
 ├── docs/
 │   ├── architecture.md
 │   └── security.md
-├── Exercise_Swimlanes.pdf
 ├── Internet_of_Things_Low_Energy_Communication.pdf
 └── README.md
 ```
