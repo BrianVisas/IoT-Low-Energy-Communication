@@ -1,0 +1,26 @@
+name: Firmware
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  compile:
+    name: Compile Arduino sketches
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile maintained firmware
+        uses: arduino/compile-sketches@v1
+        with:
+          fqbn: arduino:avr:uno
+          platforms: |
+            - name: arduino:avr
+          libraries: |
+            - name: LiquidCrystal
+            - name: Servo
+          sketch-paths: |
+            - firmware
+          enable-warnings-report: true
