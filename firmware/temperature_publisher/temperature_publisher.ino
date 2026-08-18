@@ -13,12 +13,23 @@ String host = "api.thingspeak.com";
 String writeApiKey = "YOUR_THINGSPEAK_WRITE_API_KEY";
 
 bool waitForResponse(const char* expected, unsigned long timeoutMs) {
+  if (expected == nullptr || expected[0] == '\0') return false;
+
+  size_t matched = 0;
   const unsigned long start = millis();
+
   while (millis() - start < timeoutMs) {
-    if (Serial.find(expected)) {
-      return true;
+    if (!Serial.available()) continue;
+
+    const char c = static_cast<char>(Serial.read());
+    if (c == expected[matched]) {
+      ++matched;
+      if (expected[matched] == '\0') return true;
+    } else {
+      matched = (c == expected[0]) ? 1 : 0;
     }
   }
+
   return false;
 }
 
@@ -29,8 +40,10 @@ bool connectEsp8266() {
   if (!waitForResponse("OK", 1000)) return false;
 
   Serial.println("AT+CWJAP=\"" + ssid + "\",\"" + password + "\"");
-  if (!waitForResponse("OK", 5000)) return false;
+  return waitForResponse("OK", 5000);
+}
 
+bool openTcpConnection() {
   Serial.println("AT+CIPSTART=\"TCP\",\"" + host + "\"," + String(kHttpPort));
   return waitForResponse("OK", 3000);
 }
@@ -50,6 +63,8 @@ void showTemperature(int temperature) {
 }
 
 bool publishTemperature(int temperature) {
+  if (!openTcpConnection()) return false;
+
   const String uri = "/update?api_key=" + writeApiKey + "&field1=" + String(temperature);
   const String request = "GET " + uri + " HTTP/1.1\r\nHost: " + host + "\r\nConnection: close\r\n\r\n";
 
