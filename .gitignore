@@ -1,0 +1,20 @@
+# Arduino build outputs
+build/
+*.hex
+*.elf
+
+# Local configuration and credentials
+secrets.h
+config.local.h
+.env
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# ModelSim generated files
+work/
+transcript
+vsim.wlf
